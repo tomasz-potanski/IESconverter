@@ -43,11 +43,7 @@ public class FormFromIlluminance extends JFrame {
     }
 
     private void drawIESFixedC(Oprawa luminaire, int cAngleNumber){
-        //TODO: update slider!!
-//        slider.setValue(cAngleNumber);
         actualGlobalCAngle = cAngleNumber;
-//        iesDrawer.drawLuminaire(luminaire, cAngleNumber);
-//        iesDrawer.repaint();
 
         actualLuminaire = luminaire;
         luminaireIsCalculated = true;
@@ -68,7 +64,6 @@ public class FormFromIlluminance extends JFrame {
         } else {
             setTitle("Illuminance distribution ->> IES");
         }
-//        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         topContainer = new JPanel();
         topContainer.setLayout(new BoxLayout(topContainer, BoxLayout.Y_AXIS));
@@ -86,10 +81,7 @@ public class FormFromIlluminance extends JFrame {
 
 
         setLayout(new BorderLayout());
-//        JLabel background=new JLabel(new ImageIcon(getClass().getResource("9.jpg")));
         JLabel background=new JLabel();
-//        background.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 20));
-//        background.setLayout(new BoxLayout(background, BoxLayout.Y_AXIS));
         background.setLayout(new BorderLayout());
 
         if (actualLanguage == Jezyk.ENGLISH){
@@ -98,7 +90,6 @@ public class FormFromIlluminance extends JFrame {
             statusLabel = new JLabel("Czekam na dane wejściowe...");
         }
         statusLabel.setFont(new Font("Arial", Font.BOLD, 20));
-//        statusLabel.setForeground(new Color(255, 255, 255));
 
         statusLabel.setVisible(true);
 
@@ -145,7 +136,6 @@ public class FormFromIlluminance extends JFrame {
         }
 
         loadCSV.setAccelerator(KeyStroke.getKeyStroke('O', KeyEvent.CTRL_DOWN_MASK));
-//        loadCSV.setMnemonic(KeyEvent.VK_O);
         loadCSV.addActionListener(new OpenCSVAL());
 
         if (actualLanguage == Jezyk.ENGLISH){
@@ -153,8 +143,6 @@ public class FormFromIlluminance extends JFrame {
         } else {
             saveIES = new JMenuItem("Zapisz wygenerowany IES");
         }
-
-
 
         saveIES.setEnabled(false);
         saveIES.setAccelerator(KeyStroke.getKeyStroke('S', KeyEvent.CTRL_DOWN_MASK));
@@ -194,8 +182,6 @@ public class FormFromIlluminance extends JFrame {
 
         saveB.setVisible(true);
         saveB.setEnabled(false);
-        //saveB.setBorder(BorderFactory.createEmptyBorder(30, 30, 30, 30));
-//        saveB.setSize(300, 50);
         saveB.addActionListener(new SaveIES());
 
         if (actualLanguage == Jezyk.ENGLISH){
@@ -218,9 +204,6 @@ public class FormFromIlluminance extends JFrame {
             }
         });
 
-
-//        background.add(Box.createRigidArea(new Dimension(50, 20)));
-
         JButton openb;
         if (actualLanguage == Jezyk.ENGLISH){
             openb = new JButton("Load illuminance distribution csv file");
@@ -233,18 +216,13 @@ public class FormFromIlluminance extends JFrame {
 
         openb.setFocusable(false);
         saveB.setFocusable(false);
-//        background.add(openb);
-//        background.add(Box.createRigidArea(new Dimension(50, 20)));
-//        background.add(statusLabel);
-//        background.add(Box.createRigidArea(new Dimension(50, 20)));
-//        background.add(saveB);
+
         topContainer.add(Box.createRigidArea(new Dimension(100, 20)) );
         topContainer.add(openb);
         topContainer.add(Box.createRigidArea(new Dimension(100, 20)));
         statusLabel.setBorder(BorderFactory.createEmptyBorder(0, 10, 0, 0));
         topContainer.add(statusLabel);
         topContainer.add(Box.createRigidArea(new Dimension(100, 20)));
-//        saveB.setBorder(BorderFactory.createEmptyBorder(0, 65, 0, 0));
 
         topContainer.add(saveB);
         topContainer.add(Box.createRigidArea(new Dimension(100, 20)));
@@ -257,21 +235,17 @@ public class FormFromIlluminance extends JFrame {
         slider.setPaintLabels(true);
         slider.addChangeListener(new SliderChangeValue());
 
-//        slider.setSize(200, 50);
         iesDrawer = new JDrawPanel();
         iesDrawerContainer = new JPanel();
         JPanel container2 = new JPanel();
         iesDrawer.setSize(new Dimension(300, 300));
         iesDrawer.setPreferredSize(new Dimension(300, 300));
         iesDrawer.setMaximumSize(new Dimension(300, 300));
-//        iesDrawer.setBackground(new Color(205, 50, 50));
         iesDrawer.setBackground(new Color(255, 255, 255, 150));
         iesDrawer.setOpaque(true);
         iesDrawer.setMinimumSize(new Dimension(300, 300));
 
-//        slider.setOpaque(true);
         slider.setBackground(new Color(255, 255, 255));
-//        slider.setPreferredSize(new Dimension(0, 100));
 
         iesDrawerContainer.setLayout(new BorderLayout());
         iesDrawerContainer.add(slider, BorderLayout.NORTH);
@@ -280,22 +254,10 @@ public class FormFromIlluminance extends JFrame {
         iesDrawerContainer.setSize(300, iesDrawerContainerY);
         iesDrawerContainer.setPreferredSize(new Dimension(300, iesDrawerContainerY));
         iesDrawerContainer.setMaximumSize(new Dimension(300, iesDrawerContainerY));
-//        iesDrawerContainer.setBackground(new Color(255, 255, 255, 150));
         iesDrawerContainer.setOpaque(false);
 
         container2.add(iesDrawerContainer);
-//        container2.setBackground(new Color(255, 255, 255, 150));
         container2.setOpaque(false);
-
-//        background.getActionMap().put("openCSV", new AbstractAction() {
-//            public void actionPerformed(ActionEvent e) {
-//                openFile();
-//            }
-//        });
-
-//        InputMap inputMap = background.getInputMap();
-//        KeyStroke controlO = KeyStroke.getKeyStroke(KeyEvent.VK_O, InputEvent.CTRL_MASK);
-//        inputMap.put(controlO, "openCSV");
 
         background.add(topContainer, BorderLayout.NORTH);
         background.add(container2, BorderLayout.CENTER);
@@ -333,9 +295,19 @@ public class FormFromIlluminance extends JFrame {
                //Apache Commons IO ;)
                FileUtils.writeStringToFile(file,iesContentToWrite,  false);
                if (actualLanguage == Jezyk.ENGLISH){
-                   JOptionPane.showMessageDialog(panel,"File successfully saved", "File saved", JOptionPane.INFORMATION_MESSAGE);
+                   JOptionPane.showMessageDialog(
+                        panel,
+                        "File successfully saved", 
+                        "File saved", 
+                        JOptionPane.INFORMATION_MESSAGE
+                    );
                } else {
-                   JOptionPane.showMessageDialog(panel,"Plik pomyślnie zapisano", "Plik zapisano", JOptionPane.INFORMATION_MESSAGE);
+                   JOptionPane.showMessageDialog(
+                        panel,
+                        "Plik pomyślnie zapisano", 
+                        "Plik zapisano", 
+                        JOptionPane.INFORMATION_MESSAGE
+                    );
                }
            }
            catch (Exception e){
@@ -389,7 +361,6 @@ public class FormFromIlluminance extends JFrame {
                     showEDistr.setEnabled(true);
 
                     int cAngleAmount = opr1.getNumber_of_horizontal_angles();
-//                    System.out.println(cAngleAmount);
                     slider.setMinimum(0);
                     slider.setMaximum(cAngleAmount - 1);
                     slider.setValue(0);
@@ -439,7 +410,6 @@ public class FormFromIlluminance extends JFrame {
         @Override
         public void stateChanged(ChangeEvent event){
             int v = slider.getValue();
-//            double newCAngle = actualLuminaire.getC_angles().get(v);
             drawIESFixedC(actualLuminaire, v);
         }
     }
@@ -461,10 +431,6 @@ public class FormFromIlluminance extends JFrame {
     }
 
     public class JDrawPanel extends JPanel{
-//        public JDrawPanel(){
-//            super();
-//        }
-
 
         public void drawLuminaire(Oprawa luminaire, int cAngleNumber, Graphics g){
             if (luminaire != null){
@@ -481,7 +447,6 @@ public class FormFromIlluminance extends JFrame {
             gg.setStroke(new BasicStroke(3));
 
             //painting
-//            System.out.printf("Maximum: %f\n", maximum);
             double R = 180.0;
             int gammaAngleNumber = 0;
             double xMiddle = JDrawPanel.this.getWidth() / 2.0;
@@ -490,8 +455,6 @@ public class FormFromIlluminance extends JFrame {
             ArrayList<Double> yToConnect = new ArrayList<Double>();
             ArrayList<Double> x2ToConnect = new ArrayList<Double>();
             ArrayList<Double> y2ToConnect = new ArrayList<Double>();
-//            xToConnect.add(xMiddle);
-//            yToConnect.add(yMiddle);
             double lastCAngle = luminaire.getC_angles().get(luminaire.getC_angles().size() - 1);
             boolean isFirst = true;
             for (Double actualCandelaValue : luminaire.getCandela_values().get(luminaire.getC_angles().get(cAngleNumber))){
@@ -507,8 +470,6 @@ public class FormFromIlluminance extends JFrame {
                     x2ToConnect.add(xEndPoint);
                     y2ToConnect.add(yEndPoint);
                 }
-//                System.out.printf("actualCandelaValue: %f\n", actualCandelaValue);
-//                System.out.printf("actualGammaAngle: %f\n", actualGammaAngle);
                 gg.drawLine((int)Math.ceil(xEndPoint), (int)Math.ceil(yEndPoint), (int)Math.ceil(xEndPoint), (int)Math.ceil(yEndPoint));
 
                 //drowing other quadrant
@@ -548,12 +509,8 @@ public class FormFromIlluminance extends JFrame {
 //                    //mayby we are able to get values explicitly
                     if (luminaire.getC_angles().size() % 2 == 1){
 //                        //fantastic symmetry
-//                        int dCNumber = (luminaire.getC_angles().size() - 1) / 2; //its even!
                         int dCNumber = ((luminaire.getC_angles().size() - 1) / 2 + cAngleNumber) % (luminaire.getC_angles().size() - 1); //its even!
-//                        System.out.println(luminaire.getC_angles().get(dCNumber));
-////                        System.out.printf("dCNumber: %d\n", dCNumber);
-////                        System.out.printf("size: %d\n", luminaire.getC_angles().size());
-////                        System.out.printf("size of gamma: %d\n", luminaire.getCandela_values().get(luminaire.getC_angles().get(dCNumber)).size());
+
                         double correlatedCandelaValue = luminaire.getCandela_values().get(luminaire.getC_angles().get(dCNumber)).get(gammaAngleNumber);
                         xEndPoint = xMiddle - R * (correlatedCandelaValue / maximum) * Math.cos((270.0 + actualGammaAngle) * Math.PI / 180.0);
 //                        //we have reversed y axis in our cartesian coordinate system
@@ -579,18 +536,26 @@ public class FormFromIlluminance extends JFrame {
 
                 gammaAngleNumber++;
             }
-//            xToConnect.add(xMiddle);
-//            yToConnect.add(yMiddle);
             x2ToConnect.add(xMiddle);
             y2ToConnect.add(yMiddle);
 
             //conect points
             gg.setStroke(new BasicStroke(2));
             for (int i = 0 ; i < xToConnect.size() -1 ; i++){
-                gg.drawLine((int)Math.ceil(xToConnect.get(i)), (int)Math.ceil(yToConnect.get(i)), (int)Math.ceil(xToConnect.get(i+1)), (int)Math.ceil(yToConnect.get(i+1)));
+                gg.drawLine(
+                    (int)Math.ceil(xToConnect.get(i)), 
+                    (int)Math.ceil(yToConnect.get(i)), 
+                    (int)Math.ceil(xToConnect.get(i+1)),
+                    (int)Math.ceil(yToConnect.get(i+1))
+                );
             }
             for (int i = 0 ; i < x2ToConnect.size() -1 ; i++){
-                gg.drawLine((int)Math.ceil(x2ToConnect.get(i)), (int)Math.ceil(y2ToConnect.get(i)), (int)Math.ceil(x2ToConnect.get(i+1)), (int)Math.ceil(y2ToConnect.get(i+1)));
+                gg.drawLine(
+                    (int)Math.ceil(x2ToConnect.get(i)), 
+                    (int)Math.ceil(y2ToConnect.get(i)), 
+                    (int)Math.ceil(x2ToConnect.get(i+1)), 
+                    (int)Math.ceil(y2ToConnect.get(i+1))
+                );
             }
 
             //draw Texts
@@ -599,7 +564,11 @@ public class FormFromIlluminance extends JFrame {
             gg.setColor(Color.blue);
             gg.setStroke(new BasicStroke(1));
             for (double diameter = 0.0 ; diameter <= distance ; diameter += diameterStep){
-                gg.drawString(String.format("%.2f", maximum * diameter/R), (int)Math.ceil(xMiddle), (int)Math.ceil(yMiddle + diameter));
+                gg.drawString(
+                    String.format("%.2f", maximum * diameter/R), 
+                    (int)Math.ceil(xMiddle), 
+                    (int)Math.ceil(yMiddle + diameter)
+                );
             }
         }
         }
@@ -610,9 +579,6 @@ public class FormFromIlluminance extends JFrame {
 
             g2d.setColor(Color.black);
             g2d.setStroke(new BasicStroke(1));
-
-//            g2d.setComposite(AlphaComposite.getInstance(
-//                    AlphaComposite.SRC_OVER, 0.3f));
 
             double width = JDrawPanel.this.getWidth();
             double height = JDrawPanel.this.getHeight();

@@ -2,9 +2,6 @@
 public abstract class Pomieszczenie {
 
     protected Pomieszczenie(/*double wsp_odb_podlogi, double wsp_odb_scian, double wsp_odb_sufitu*/) {
-//        this.wsp_odb_podlogi = wsp_odb_podlogi;
-//        this.wsp_odb_scian = wsp_odb_scian;
-//        this.wsp_odb_sufitu = wsp_odb_sufitu;
     }
 
     public double getWsp_odb_podlogi() {
@@ -34,7 +31,4 @@ public abstract class Pomieszczenie {
     double wsp_odb_podlogi;
     double wsp_odb_scian;
     double wsp_odb_sufitu;
-
-//    SiatkaAbstrakcyjna siatka;
-
 }

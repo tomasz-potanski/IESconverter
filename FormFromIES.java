@@ -67,7 +67,6 @@ public class FormFromIES extends JFrame {
             statusLabel = new JLabel("Czekam na dane wejściowe...");
         }
         statusLabel.setFont(new Font("Arial", Font.BOLD, 20));
-//        statusLabel.setForeground(new Color(255, 255, 255));
         statusLabel.setVisible(true);
 
         JMenuBar menuBar = new JMenuBar();
@@ -138,7 +137,6 @@ public class FormFromIES extends JFrame {
         setJMenuBar(menuBar);
 
         setLayout(new BorderLayout());
-//        JLabel background=new JLabel(new ImageIcon(getClass().getResource("8.jpg")));
         JLabel background=new JLabel();
         background.setLayout(new BorderLayout());
 
@@ -171,7 +169,6 @@ public class FormFromIES extends JFrame {
         } else {
             lengthLabel = new JLabel("Długość pomieszczenia: ");
         }
-//        lengthLabel.setForeground(Color.white);
         lengthTextField = new JTextField("3.0");
         lengthTextField.setPreferredSize(new Dimension(60,20));
         lengthPanel.add(lengthLabel);
@@ -184,7 +181,6 @@ public class FormFromIES extends JFrame {
         } else {
             widthLabel = new JLabel("Szerokość pomieszczenia: ");
         }
-//        widthLabel.setForeground(Color.white);
         widthTextField = new JTextField("3.0");
         widthTextField.setPreferredSize(new Dimension(60,20));
         widthPanel.add(widthLabel);
@@ -198,7 +194,6 @@ public class FormFromIES extends JFrame {
             heightLabel = new JLabel("Wysokość pomieszczenia: ");
         }
 
-//        heightLabel.setForeground(Color.white);
         heightTextField = new JTextField("3.0");
         heightTextField.setPreferredSize(new Dimension(60,20));
         heightPanel.add(heightLabel);
@@ -211,7 +206,6 @@ public class FormFromIES extends JFrame {
         } else {
             floorReflectionFactorLabel = new JLabel("Współczynnik odbicia podłogi: ");
         }
-//        floorReflectionFactorLabel.setForeground(Color.white);
         floorReflectionFactorTextField = new JTextField("20");
         floorReflectionFactorTextField.setPreferredSize(new Dimension(60,20));
         floorReflectionFactorPanel.add(floorReflectionFactorLabel);
@@ -224,7 +218,6 @@ public class FormFromIES extends JFrame {
         } else {
             wallReflectionFactorLabel = new JLabel("Współczynnik odbicia ścian: ");
         }
-//        wallReflectionFactorLabel.setForeground(Color.white);
         wallReflectionFactorTextField = new JTextField("50");
         wallReflectionFactorTextField.setPreferredSize(new Dimension(60,20));
         wallReflectionFactorPanel.add(wallReflectionFactorLabel);
@@ -237,28 +230,11 @@ public class FormFromIES extends JFrame {
         } else {
             ceilingReflectionFactorLabel = new JLabel("Współczynnik odbicia sufitu: ");
         }
-//        ceilingReflectionFactorLabel.setForeground(Color.white);
         ceilingReflectionFactorTextField = new JTextField("70");
         ceilingReflectionFactorTextField.setPreferredSize(new Dimension(60,20));
         ceilingReflectionFactorPanel.add(ceilingReflectionFactorLabel);
         ceilingReflectionFactorPanel.add(ceilingReflectionFactorTextField);
         ceilingReflectionFactorPanel.setOpaque(false);
-
-//        JPanel cAnglesAmountPanel = new JPanel(new FlowLayout());
-//        JLabel cAnglesAmountLabel = new JLabel("Amount of horizontal angles (C): ");
-//        cAnglesAmountLabel.setForeground(Color.white);
-//        cAnglesAmountTextField = new JTextField("10");
-//        cAnglesAmountPanel.add(cAnglesAmountLabel);
-//        cAnglesAmountPanel.add(cAnglesAmountTextField);
-//        cAnglesAmountPanel.setOpaque(false);
-
-//        JPanel dGammaPanel = new JPanel(new FlowLayout());
-//        JLabel dGammaLabel = new JLabel("Delta of gamma angle: ");
-//        dGammaLabel.setForeground(Color.white);
-//        dGammaTextField = new JTextField("5.0");
-//        dGammaPanel.add(dGammaLabel);
-//        dGammaPanel.add(dGammaTextField);
-//        dGammaPanel.setOpaque(false);
 
         JPanel xFieldAmountPanel = new JPanel(new FlowLayout());
         if (actualLanguage == Jezyk.ENGLISH){
@@ -266,7 +242,6 @@ public class FormFromIES extends JFrame {
         } else {
             xFieldAmountLabel = new JLabel("Ilość pól siatki wzdłuż długości: ");
         }
-//        xFieldAmountLabel.setForeground(Color.white);
         xFieldAmountTextField = new JTextField("3");
         xFieldAmountTextField.setPreferredSize(new Dimension(60,20));
 
@@ -280,7 +255,6 @@ public class FormFromIES extends JFrame {
         } else {
             yFieldAmountLabel = new JLabel("Ilość pól siatki wzdłuż szerokości: ");
         }
-//        yFieldAmountLabel.setForeground(Color.white);
         yFieldAmountTextField = new JTextField("3");
         yFieldAmountTextField.setPreferredSize(new Dimension(60,20));
         yFieldAmountPanel.add(yFieldAmountLabel);
@@ -293,7 +267,6 @@ public class FormFromIES extends JFrame {
         } else {
             xLuminaireLabel = new JLabel("Współrzędna oprawy wzdłuż długości: ");
         }
-//        xLuminaireLabel.setForeground(Color.white);
         xLuminaireTextField = new JTextField("1.5");
         xLuminaireTextField.setPreferredSize(new Dimension(60,20));
         xLuminairePanel.add(xLuminaireLabel);
@@ -306,7 +279,6 @@ public class FormFromIES extends JFrame {
         } else {
             yLuminaireLabel = new JLabel("Współrzędne oprawy wzdłuż szerokości: ");
         }
-//        yLuminaireLabel.setForeground(Color.white);
         yLuminaireTextField = new JTextField("1.5");
         yLuminaireTextField.setPreferredSize(new Dimension(60,20));
         yLuminairePanel.add(yLuminaireLabel);
@@ -319,7 +291,6 @@ public class FormFromIES extends JFrame {
         } else {
             zLuminaireLabel = new JLabel("Współrzędne oprawy wzdłuż wysokości: ");
         }
-//        zLuminaireLabel.setForeground(Color.white);
         zLuminaireTextField = new JTextField("3.0");
         zLuminaireTextField.setPreferredSize(new Dimension(60,20));
         zLuminairePanel.add(zLuminaireLabel);
@@ -327,14 +298,11 @@ public class FormFromIES extends JFrame {
         zLuminairePanel.setOpaque(false);
 
         centerContainer.add(lengthPanel);
-//        centerContainer.add(Box.createRigidArea(new Dimension(0, 10)));
         centerContainer.add(widthPanel);
         centerContainer.add(heightPanel);
         centerContainer.add(floorReflectionFactorPanel);
         centerContainer.add(wallReflectionFactorPanel);
         centerContainer.add(ceilingReflectionFactorPanel);
-//        centerContainer.add(cAnglesAmountPanel);
-//        centerContainer.add(dGammaPanel);
         centerContainer.add(xFieldAmountPanel);
         centerContainer.add(yFieldAmountPanel);
         centerContainer.add(xLuminairePanel);
@@ -419,7 +387,6 @@ public class FormFromIES extends JFrame {
                 int floorReflectionFactor = Integer.parseInt(floorReflectionFactorTextField.getText());
                 int wallReflectionFactor = Integer.parseInt(wallReflectionFactorTextField.getText());
                 int ceilingReflectionFactor = Integer.parseInt(ceilingReflectionFactorTextField.getText());
-//                double deltaGamma = Double.parseDouble(Main.changeCommaToDot(dGammaTextField.getText()));
                 int xFieldAmount = Integer.parseInt(xFieldAmountTextField.getText());
                 int yFieldAmount = Integer.parseInt(yFieldAmountTextField.getText());
 
@@ -431,8 +398,8 @@ public class FormFromIES extends JFrame {
                 luminairesPosition.add(new WspOprawy(xLuminaire, yLuminaire, zLuminaire));
 
                 PomieszczenieProstokatne pom1 = new PomieszczenieProstokatne(length, width, height, floorReflectionFactor, wallReflectionFactor,
-                        ceilingReflectionFactor, /*deltaGamma,*/ xFieldAmount, yFieldAmount, luminaires, luminairesPosition);
-                /*PomieszczenieProstokatne pom1 =*/ Main.bryla_na_siatke(file.getAbsolutePath().toString(), pom1);
+                        ceilingReflectionFactor, xFieldAmount, yFieldAmount, luminaires, luminairesPosition);
+                Main.bryla_na_siatke(file.getAbsolutePath().toString(), pom1);
                 actualRoom = pom1;
                 if (Main.isRoomProperlyCalculated == true){
                     if (actualLanguage == Jezyk.ENGLISH){

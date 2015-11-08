@@ -24,7 +24,6 @@ public class Form1 extends JFrame{
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         setLayout(new BorderLayout());
-//        JLabel background=new JLabel(new ImageIcon(getClass().getResource("1.png")));
         JLabel background=new JLabel();
         add(background);
         background.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 20));
@@ -41,7 +40,6 @@ public class Form1 extends JFrame{
 
         languageLabel = new JLabel("Choose language:");
 
-//        polski.addChangeListener(new PCL());
         polski.addActionListener(new PCL());
         angielski.addActionListener(new ECL());
 
@@ -77,8 +75,6 @@ public class Form1 extends JFrame{
         background.add(b2);
         background.add(languageLabel);
         background.add(languagePanel);
-
-//        background.add(b3);
 
         setResizable(false);
         setVisible(true);

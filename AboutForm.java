@@ -23,8 +23,8 @@ public class AboutForm extends JDialog {
         JPanel topPanel = new JPanel(new BorderLayout(0, 0));
         topPanel.setMaximumSize(new Dimension(450, 0));
         JLabel hint = new JLabel("<html><b>Tomasz Potański</b><br><a href='mailto:tomasz@potanski.pl'>tomasz@potanski.pl</a>"
-        + "<br> my website: <a href='potanski.pl'>potanski.pl</a>" +
-        "</html>");
+                + "<br> my website: <a href='potanski.pl'>potanski.pl</a>" +
+                "</html>");
         hint.setBorder(BorderFactory.createEmptyBorder(0, 25, 0, 0));
         topPanel.add(hint);
 
@@ -48,8 +48,8 @@ public class AboutForm extends JDialog {
         pane.setContentType("text/html");
         String text = "<p><b>Basic information about the program...</b></p>" +
                 "<p>Program was written in java using swing GUI widget toolkit.<br>" +
-                "The aim of the program is to conduct two basic calculations/convertions:<br>"+
-                "1) Generate illuminance distribution from given IES luminaire file and room parameters.<br>"+
+                "The aim of the program is to conduct two basic calculations/convertions:<br>" +
+                "1) Generate illuminance distribution from given IES luminaire file and room parameters.<br>" +
                 "2) Generate IES luminaire file (and draw it) from given illuminance distribution and room parameters<br>" +
                 "<br>It's a program written for Bachelor's Degree at the Warsaw University of Technology (faculty of Electrical Engineering).<br>" +
                 "<br>More details about this (and other of my projects) can be found at my website.<br>" +
@@ -63,9 +63,7 @@ public class AboutForm extends JDialog {
 
         JScrollPane paneScrollable = new JScrollPane();
         paneScrollable.getViewport().add(pane);
-//        paneScrollable.set
 
-//        textPanel.add(pane);
         pane.setCaretPosition(0);
         textPanel.add(paneScrollable);
 
@@ -73,9 +71,6 @@ public class AboutForm extends JDialog {
 
         JPanel boxPanel = new JPanel(new FlowLayout(FlowLayout.LEFT, 20, 0));
 
-//        JCheckBox box = new JCheckBox("Show Tips at startup");
-
-//        boxPanel.add(box);
         basic.add(boxPanel);
 
         JPanel bottom = new JPanel(new FlowLayout(FlowLayout.RIGHT));
